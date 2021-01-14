@@ -11,13 +11,14 @@ Copyright: MIT
  * @param thing a String that tells the user what the program wants inputted
  */
 class UserInput(thing: String) {
+    var input: String? = null
 
     /**
      * constructor that starts with a message() then a input()
      */
     init {
         message(thing)
-        input()
+        input = input()
     }
 
     /**
@@ -33,4 +34,6 @@ class UserInput(thing: String) {
     private fun input(): String {
         return readLine()!!.toLowerCase() //Reads user input that is not null and forces it to be in lowercase
     }
+
+
 }
