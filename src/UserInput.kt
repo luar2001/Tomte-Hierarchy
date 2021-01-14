@@ -2,7 +2,7 @@
 Created by Lukas Aronsson
 Date: 14/01/2021
 Time: 16:52
-Project: IndividuelUppgift2
+Project: Tomte-Hierarchy
 Copyright: MIT
  **/
 

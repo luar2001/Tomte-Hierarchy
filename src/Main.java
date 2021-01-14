@@ -5,7 +5,7 @@ import java.util.List;
  * Created by Lukas Aronsson
  * Date: 14/01/2021
  * Time: 13:59
- * Project: IndividuelUppgift2
+ * Project: Tomte-Hierarchy
  * Copyright: MIT
  **/
 public class Main {
