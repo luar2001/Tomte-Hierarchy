@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Created by Name Here
+ * Created by Lukas Aronsson
  * Date: 14/01/2021
  * Time: 13:59
  * Project: IndividuelUppgift2
@@ -7,10 +10,22 @@
  **/
 public class Main {
     public static void main(String[] args) {
-        String name = new UserInput("name").getInput();
 
+        List<String> directions = new ArrayList<>();
+        directions.add("higher");
+        directions.add("lower");
 
-        System.out.println(name);
+        UserInput name = new UserInput("name");
+        UserInput direction = new UserInput("direction");
+
+        if (direction.inList(directions)) {
+            System.out.println(direction.getInput() + " is on the list");
+        } else {
+            System.out.println(direction.getInput() + " is not on the list");
+        }
+
+        System.out.println(name.getInput());
+
 
     }
 }

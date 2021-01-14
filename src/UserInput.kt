@@ -35,5 +35,11 @@ class UserInput(thing: String) {
         return readLine()!!.toLowerCase() //Reads user input that is not null and forces it to be in lowercase
     }
 
+    /**
+     * Takes in a list and checks if the userInput is inside it.
+     */
+    fun inList(list: List<String>): Boolean {
+        return list.contains(input)
+    }
 
 }
