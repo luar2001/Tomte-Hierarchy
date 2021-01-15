@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,9 +11,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        List<String> directions = new ArrayList<>();
-        directions.add("higher");
-        directions.add("lower");
+        List<String> directions = Arrays.asList("higher", "lower");
 
         UserInput name = new UserInput("name");
         UserInput direction = new UserInput("direction");
@@ -25,7 +23,6 @@ public class Main {
         }
 
         System.out.println(name.getInput());
-
 
     }
 }
