@@ -41,5 +41,4 @@ class UserInput(thing: String) {
     fun inList(list: List<String>): Boolean {
         return list.contains(input)
     }
-
 }
