@@ -15,13 +15,20 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<String> directions = Arrays.asList("higher", "lower"); //list that holds the 2 directions the user can check in the hierarchy of Tomtar
+        List<String> names = Arrays.asList("Tomten")
 
         UserInput name = new UserInput("name");
         UserInput direction = new UserInput("direction");
 
-        System.out.println(name.getInput());
+        if (name.inList(names)) {
+
+
+        } else {
+            System.out.println("Input a name of a Tomte: ");
+        }
 
         System.out.println(direction.getInput() + " is " + ((direction.inList(directions)) ? "" : "not ") + "on the list");
+
 
     }
 }

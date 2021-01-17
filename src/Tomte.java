@@ -7,12 +7,13 @@
  */
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
  */
 public class Tomte {
-    String name = null; //name of the Tomte
+    String name; //name of the Tomte
     Tomte boss = null; //Tomtens boss
 
     List<Tomte> workers = null; //list of the Tomtar that is directly under this tomte.
@@ -20,7 +21,7 @@ public class Tomte {
     List<Tomte> HigherRanked = null;
     List<Tomte> LowerRanked = null;
 
-    public Tomte(String name, Tomte boss, List<Tomte> workers) {
+    public Tomte(String name, Tomte boss) {
         setName(name);
         setBoss(boss);
     }
@@ -45,9 +46,28 @@ public class Tomte {
         return workers;
     }
 
-    public void Hierarchy(String direction) {
+    public void setWorkers(List<Tomte> workers) {
+        this.workers = workers;
+    }
 
+    public List<String> Hierarchy(String direction) {
+        if (direction.equals("higher")) {
+            return getNames(makeHigherHierarchyList());
+        } else if (direction.equals("lower")) {
+            System.out.println("That is currently not a feature...");
+            //return getNames(makeLowerHierarchyList());
+            return null;
+        } else {
+            System.out.println("Please input a valid direction");
+            return null;
+        }
+    }
 
+    public List<String> getNames(List<Tomte> tomtar) {
+
+        return tomtar.stream()
+                .map(Tomte::getName)
+                .collect(Collectors.toList());
     }
 
     public List<Tomte> makeHigherHierarchyList() {
@@ -58,9 +78,11 @@ public class Tomte {
         return HigherRanked;
     }
 
-    public void makeLowerHierarchyList() {
-        LowerRanked.addAll(workers);
-        makeLowerHierarchyList(); //Workers here ?
+    public List<Tomte> makeLowerHierarchyList() {
+        while (true) {
+            LowerRanked.addAll(workers);
+            makeLowerHierarchyList(); //Workers here ?
+        }
 
     }
 }
