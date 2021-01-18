@@ -35,7 +35,6 @@ public class Hierarchy {
     }
 
     public static void makeHigherHierarchyList(Tomte tomte) {
-
         higherRanked.add(tomte.getBoss());
         if (!tomte.getBoss().equals(Tomtar.tomten)) {
             makeHigherHierarchyList(tomte.getBoss());
