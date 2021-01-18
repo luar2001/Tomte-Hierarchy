@@ -11,7 +11,7 @@ Copyright: MIT
  * @param thing a String that tells the user what the program wants inputted
  */
 class UserInput(thing: String) {
-    var input: String? = null
+    private var input: String? = null
 
     /**
      * constructor that starts with a message() then a input()
