@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -27,9 +28,8 @@ public class Hierarchy {
             makeHigherHierarchyList(tomte);
             return getNames(higherRanked);
         } else if (direction.equals("lower")) {
-            System.out.println("That is currently not a feature...");
-            //return getNames(tomte.getLowerRanked());
-            return null;
+            makeLowerHierarchyList(tomte);
+            return getNames(lowerRanked);
         } else {
             System.out.println("Please input a valid direction");
             return null;
@@ -54,10 +54,12 @@ public class Hierarchy {
      * @param tomte a Tomte object
      */
     public static void makeHigherHierarchyList(Tomte tomte) {
-        higherRanked.add(tomte.getBoss());
-        if (!tomte.getBoss().equals(Tomtar.tomten)) {
+
+        if (tomte.getBoss() != null) {
+            higherRanked.add(tomte.getBoss());
             makeHigherHierarchyList(tomte.getBoss());
         }
+
     }
 
     /**
@@ -65,10 +67,14 @@ public class Hierarchy {
      *
      * @param tomte a Tomte object
      */
-    public static List<Tomte> makeLowerHierarchyList(Tomte tomte) {
-        while (true) {
-            lowerRanked.addAll(tomte.getWorkers());
-            // makeLowerHierarchyList(); //Workers here ?
+    public static void makeLowerHierarchyList(Tomte tomte) {
+        if (!tomte.getWorkers().stream().allMatch(Objects::isNull)) {
+            for (int i = tomte.getWorkers().size(); i > 0; i--) {
+                lowerRanked.add(tomte.getWorkers().get(i - 1));
+                if (tomte.getWorkers().get(i - 1) != null) {
+                    makeLowerHierarchyList(tomte.getWorkers().get(i - 1));
+                }
+            }
         }
     }
 
