@@ -16,6 +16,7 @@ public class Main {
         List<String> directions = Arrays.asList("higher", "lower"); //list that holds the 2 directions the user can check in the hierarchy of Tomtar
         Tomtar.setWorkers(); //Gives the Tomtar workers
         System.out.println("First Input Name || Then Input a Direction (Higher or Lower) ");
+        // TODO: 19/01/2021 add a check for if the inputted name correlates to a tomte (currently there is an error)
         UserInput name = new UserInput("name"); //calls for the UserInput Class
         UserInput direction = new UserInput("direction"); //calls for the UserInput Class
         Tomte selectedTomte = Tomtar.selectedTomte((name.getInput()));

@@ -68,6 +68,7 @@ public class Hierarchy {
      * @param tomte a Tomte object
      */
     public static void makeLowerHierarchyList(Tomte tomte) {
+        // TODO: 19/01/2021 Somehow fix the order ?, no real clue what causes the problem so prob hard fix.
         if (!tomte.getWorkers().stream().allMatch(Objects::isNull)) {
             for (int i = tomte.getWorkers().size(); i > 0; i--) {
                 lowerRanked.add(tomte.getWorkers().get(i - 1));

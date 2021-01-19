@@ -32,12 +32,12 @@ public class Tomtar {
     public static Tomte troger = new Tomte("Tröger", glader);
     public static Tomte blyger = new Tomte("Blyger", glader);
     public static Tomte trotter = new Tomte("Trötter", glader);
-    private static final List<Tomte> workersGlader = Arrays.asList(troger, blyger, trotter);
+    private static final List<Tomte> workersGlader = Arrays.asList(trotter, troger, blyger);
     public static Tomte radjuret = new Tomte("Rådjuret", butter);
     public static Tomte nyckelpigan = new Tomte("Nyckelpigan", butter);
     public static Tomte raven = new Tomte("Räven", butter);
     public static Tomte haren = new Tomte("Haren", butter);
-    private static final List<Tomte> workersButter = Arrays.asList(radjuret, nyckelpigan, raven, haren);
+    private static final List<Tomte> workersButter = Arrays.asList(radjuret, raven, haren, nyckelpigan);
     public static Tomte skumtomten = new Tomte("Skumtomten", trotter);
     private static final List<Tomte> workersTrotter = Collections.singletonList(skumtomten);
     public static Tomte grasuggan = new Tomte("Gråsuggan", raven);
@@ -45,7 +45,7 @@ public class Tomtar {
     public static Tomte dammrattan = new Tomte("Dammråttan", skumtomten);
     private static final List<Tomte> workersSkumtomten = Collections.singletonList(dammrattan);
     public static Tomte bladlusen = new Tomte("Bladlusen", myran);
-    private static final List<Tomte> workersRaven = Arrays.asList(grasuggan, myran, bladlusen);
+    private static final List<Tomte> workersRaven = Arrays.asList(grasuggan, myran);
     private static final List<Tomte> workersMyran = Collections.singletonList(bladlusen);
     public static List<Tomte> listOfTomtar = Arrays.asList(tomten, glader, butter, troger, blyger, trotter, radjuret, nyckelpigan, raven, haren, skumtomten, grasuggan, myran, dammrattan, bladlusen);
 
