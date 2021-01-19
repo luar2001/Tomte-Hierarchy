@@ -54,12 +54,10 @@ public class Hierarchy {
      * @param tomte a Tomte object
      */
     public static void makeHigherHierarchyList(Tomte tomte) {
-
         if (tomte.getBoss() != null) {
             higherRanked.add(tomte.getBoss());
             makeHigherHierarchyList(tomte.getBoss());
         }
-
     }
 
     /**
