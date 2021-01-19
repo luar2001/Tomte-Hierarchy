@@ -14,15 +14,11 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
         List<String> directions = Arrays.asList("higher", "lower"); //list that holds the 2 directions the user can check in the hierarchy of Tomtar
-
+        Tomtar.setWorkers(); //Gives the Tomtar workers
         System.out.println("First Input Name || Then Input a Direction (Higher or Lower) ");
-
-        UserInput name = new UserInput("name");
-        UserInput direction = new UserInput("direction");
-        System.out.println(direction.getInput() + " is " + ((direction.inList(directions)) ? "" : "not ") + "on the list of valid directions");
-
+        UserInput name = new UserInput("name"); //calls for the UserInput Class
+        UserInput direction = new UserInput("direction"); //calls for the UserInput Class
         Tomte selectedTomte = Tomtar.selectedTomte((name.getInput()));
-
         if (Objects.equals(Objects.requireNonNull(direction.getInput()).toLowerCase(), "higher") && selectedTomte.getBoss() == null || Objects.equals(Objects.requireNonNull(direction.getInput()).toLowerCase(), "lower") && selectedTomte.getWorkers() == null) {
             System.out.println(selectedTomte.getName() + " is the end of the Hierarchy");
         } else {
