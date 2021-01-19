@@ -12,9 +12,9 @@ import java.util.List;
  * Class that holds the blueprints for a Tomte
  */
 public class Tomte {
-    String name; //name of the Tomte
-    Tomte boss; //Tomtens boss
-    List<Tomte> workers = null; //list of the Tomtar that is directly under this tomte.
+    private String name; //name of the Tomte
+    private Tomte boss; //Tomtens boss
+    private List<Tomte> workers; //list of the Tomtar that is directly under this tomte.
 
     public Tomte(String name, Tomte boss) {
         setName(name);
