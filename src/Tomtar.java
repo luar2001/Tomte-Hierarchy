@@ -68,7 +68,6 @@ public class Tomtar {
         myran.setWorkers(workersMyran);
         dammrattan.setWorkers(workersDammrattan);
         bladlusen.setWorkers(workersBladlusen);
-
     }
 
     /**
