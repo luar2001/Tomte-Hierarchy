@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
  * give them a boss,workers and a name
  */
 public class Tomtar {
-
     private static final List<Tomte> workersTroger = Collections.singletonList(null);
     private static final List<Tomte> workersBlyger = Collections.singletonList(null);
     private static final List<Tomte> workersRadjuret = Collections.singletonList(null);
@@ -97,5 +96,19 @@ public class Tomtar {
         List<Tomte> tomte = selectTomte(name);
         assert tomte != null;
         return tomte.get(0);
+    }
+
+    /**
+     * returns true if the user inputted name is one of the Tomtars name
+     * (lazy fix to remove an error message when you type the wrong name)
+     *
+     * @param name the user inputted name
+     * @return true or false
+     */
+    public static Boolean isATomtesName(String name) {
+        List<String> names = listOfTomtar.stream()
+                .map(tomte -> tomte.getName().toLowerCase())
+                .collect(Collectors.toList());
+        return names.contains(name);
     }
 }

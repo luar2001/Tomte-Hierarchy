@@ -16,18 +16,21 @@ public class Main {
         List<String> directions = Arrays.asList("higher", "lower"); //list that holds the 2 directions the user can check in the hierarchy of Tomtar
         Tomtar.setWorkers(); //Gives the Tomtar workers
         System.out.println("First Input Name || Then Input a Direction (Higher or Lower) ");
-        // TODO: 19/01/2021 add a check for if the inputted name correlates to a tomte (currently there is an error)
         UserInput name = new UserInput("name"); //calls for the UserInput Class
-        UserInput direction = new UserInput("direction"); //calls for the UserInput Class
-        Tomte selectedTomte = Tomtar.selectedTomte((name.getInput()));
-        if (Objects.equals(Objects.requireNonNull(direction.getInput()).toLowerCase(), "higher") && selectedTomte.getBoss() == null || Objects.equals(Objects.requireNonNull(direction.getInput()).toLowerCase(), "lower") && selectedTomte.getWorkers() == null) {
-            System.out.println(selectedTomte.getName() + " is the end of the Hierarchy");
-        } else {
-            if (direction.inList(directions)) {
-                System.out.println(Hierarchy.hierarchyCreator(Objects.requireNonNull(direction.getInput()), selectedTomte));
+        if (Tomtar.isATomtesName(name.getInput())) {
+            UserInput direction = new UserInput("direction"); //calls for the UserInput Class
+            Tomte selectedTomte = Tomtar.selectedTomte((name.getInput()));
+            if (Objects.equals(Objects.requireNonNull(direction.getInput()).toLowerCase(), "higher") && selectedTomte.getBoss() == null || Objects.equals(Objects.requireNonNull(direction.getInput()).toLowerCase(), "lower") && selectedTomte.getWorkers().stream().allMatch(Objects::isNull)) {
+                System.out.println(selectedTomte.getName() + " is the end of the Hierarchy");
             } else {
-                System.out.println("Please try again :) ");
+                if (direction.inList(directions)) {
+                    System.out.println(Hierarchy.hierarchyCreator(Objects.requireNonNull(direction.getInput()), selectedTomte));
+                } else {
+                    System.out.println("You inputted an invalid direction please ");
+                }
             }
+        } else {
+            System.out.println("Input a valid name");
         }
     }
 }
