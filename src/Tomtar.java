@@ -32,7 +32,7 @@ public class Tomtar {
     public static Tomte troger = new Tomte("Tröger", glader);
     public static Tomte blyger = new Tomte("Blyger", glader);
     public static Tomte trotter = new Tomte("Trötter", glader);
-    private static final List<Tomte> workersGlader = Arrays.asList(trotter, troger, blyger);
+    private static final List<Tomte> workersGlader = Arrays.asList(troger, trotter, blyger);
     public static Tomte radjuret = new Tomte("Rådjuret", butter);
     public static Tomte nyckelpigan = new Tomte("Nyckelpigan", butter);
     public static Tomte raven = new Tomte("Räven", butter);
